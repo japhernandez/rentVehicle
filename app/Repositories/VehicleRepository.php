@@ -6,6 +6,7 @@ namespace App\Repositories;
 
 use App\Models\Vehicle;
 use App\UseCase\VehicleInterface;
+use Illuminate\Database\Eloquent\Collection;
 
 class VehicleRepository implements VehicleInterface
 {
@@ -24,7 +25,7 @@ class VehicleRepository implements VehicleInterface
     }
 
     /**
-     * @return mixed
+     * @return Vehicle[]|Collection|mixed
      */
     public function listVehicle()
     {

@@ -20,22 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1a590e-85c5-43e7-a031-1ad9a359201b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Repositories/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/VehicleRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/UseCase/UserInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/UseCase/VehicleInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/RentRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/UseCase/RentInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rentVehicle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rentVehicle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/VehicleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/VehicleRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +154,14 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hOkgkGJpIAvIkyREi3ujfePUa9" />
@@ -248,7 +251,7 @@
       <workItem from="1600019895559" duration="6020000" />
       <workItem from="1600027838203" duration="589000" />
       <workItem from="1600028539493" duration="582000" />
-      <workItem from="1600029728109" duration="8963000" />
+      <workItem from="1600029728109" duration="18731000" />
     </task>
     <servers />
   </component>
@@ -284,14 +287,14 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="549" y="325" key="#com.intellij.fileTypes.FileTypeChooser/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1599939714947" />
-    <state x="639" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1599948539699">
+    <state x="639" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1600057748262">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="639" y="205" key="#com.intellij.ide.util.MemberChooser/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1599948539699" />
-    <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600019640051">
+    <state x="639" y="205" key="#com.intellij.ide.util.MemberChooser/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600057748262" />
+    <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600057787545">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600019640051" />
+    <state x="578" y="287" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600057787545" />
     <state x="586" y="444" width="508" height="261" key="ComposerInitDialogKey" timestamp="1600038658784">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -320,9 +323,9 @@
     </state>
     <state width="1638" height="290" key="GridCell.Tab.0.right/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600042831207" />
     <state width="1638" height="290" key="GridCell.Tab.0.right/-1366.23.1366.745/0.0.1680.1050@0.0.1680.1050" timestamp="1600024061239" />
-    <state x="572" y="242" key="NewPhpClassDialog" timestamp="1600006375843">
+    <state x="572" y="242" key="NewPhpClassDialog" timestamp="1600057734955">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="572" y="242" key="NewPhpClassDialog/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600006375843" />
+    <state x="572" y="242" key="NewPhpClassDialog/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600057734955" />
   </component>
 </project>

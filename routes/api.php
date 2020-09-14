@@ -31,6 +31,9 @@ Route::middleware('auth.jwt')->group(function () {
     Route::post('/vehicle', 'VehicleController@store')->name('api.vehicle.store');
     Route::put('/vehicle/{id}', 'VehicleController@update')->name('api.vehicle.update');
     Route::delete('/vehicle/{id}', 'VehicleController@destroy')->name('api.vehicle.destroy');
+
+    Route::get('/rents/all/{from}/{to}', 'RentController@index')->name('api.rent.index');
+    Route::post('/rent', 'RentController@store')->name('api.rent.store');
 });
 
 Route::get('/vehicle', 'VehicleController@index')->name('api.vehicle.index');

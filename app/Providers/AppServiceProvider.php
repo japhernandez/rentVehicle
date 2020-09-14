@@ -28,6 +28,11 @@ class AppServiceProvider extends ServiceProvider
             'App\UseCase\VehicleInterface',
             'App\Repositories\VehicleRepository'
         );
+
+        $this->app->bind(
+            'App\UseCase\RentInterface',
+            'App\Repositories\RentRepository'
+        );
     }
 
     /**
