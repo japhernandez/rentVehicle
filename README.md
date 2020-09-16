@@ -35,7 +35,7 @@ Se debe generar un token, para poder ver todos los recursos, la ruta que hace es
 ###### email: *john@gmail.com*
 ###### password: *123456*
 
-##Aplicación del lado del Cliente
+## Aplicación del lado del Cliente
 
 ###### *cd client*
 ###### *ng serve*
