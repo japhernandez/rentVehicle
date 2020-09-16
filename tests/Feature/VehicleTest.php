@@ -12,9 +12,11 @@ class VehicleTest extends TestCase
     public function it_vehicle_list_all()
     {
         $this->withoutExceptionHandling();
-        factory(Vehicle::class)->create(['id' => mt_rand(500, 800)]);
+        $user = ['email' => 'john@gmail.com', 'password' => '123456'];
+        $token = $this->post(route('api.auth.login'), $user);
+        factory(Vehicle::class)->create(['id' => mt_rand(500, 700)]);
         factory(Vehicle::class)->create(['id' => mt_rand(390, 490)]);
-        $response = $this->get(route('api.vehicle.index'));
+        $response = $this->withHeader('Authorization', 'Bearer ' . $token['access_token'])->get(route('api.vehicle.index'));
 
         $response->assertSuccessful();
     }
@@ -28,7 +30,7 @@ class VehicleTest extends TestCase
         $vehicle = factory(Vehicle::class)->raw(['id' => mt_rand(200, 250)]);
 
 
-        $response = $this->withHeader('Authorization', 'Bearer ' . $token['access_token'])->post(url('/api/vehicle'), $vehicle);
+        $response = $this->withHeader('Authorization', 'Bearer ' . $token['access_token'])->post(url('/api/v1/vehicles'), $vehicle);
         $response->assertStatus(201);
         $this->assertDatabaseHas('vehicles', ['license_plate' => $vehicle['license_plate']]);
     }
@@ -39,7 +41,7 @@ class VehicleTest extends TestCase
 
         $user = ['email' => 'john@gmail.com', 'password' => '123456'];
         $token = $this->post(route('api.auth.login'), $user);
-        $response = $this->withHeader('Authorization', 'Bearer ' . $token['access_token'])->post(url('/api/vehicle'), []);
+        $response = $this->withHeader('Authorization', 'Bearer ' . $token['access_token'])->post(url('/api/v1/vehicles'), []);
 
         $response->assertStatus(422);
         $response->assertJson([
@@ -58,9 +60,6 @@ class VehicleTest extends TestCase
                 ],
                 "rental_value" => [
                     "The rental value field is required."
-                ],
-                "availability" => [
-                    "The availability field is required."
                 ]
             ]
         ]);
@@ -69,8 +68,10 @@ class VehicleTest extends TestCase
     /** @test */
     public function it_show_detail_a_vehicle_an_authenticated_user()
     {
+        $user = ['email' => 'john@gmail.com', 'password' => '123456'];
+        $token = $this->post(route('api.auth.login'), $user);
         $vehicle = factory(Vehicle::class)->create(['id' => mt_rand(790, 940)]);
-        $response = $this->get(route('api.vehicle.show', $vehicle['id']));
+        $response = $this->withHeader('Authorization', 'Bearer ' . $token['access_token'])->get(route('api.vehicle.show', $vehicle['id']));
 
         $response->assertStatus(200);
     }
@@ -113,9 +114,6 @@ class VehicleTest extends TestCase
                 ],
                 "rental_value" => [
                     "The rental value field is required."
-                ],
-                "availability" => [
-                    "The availability field is required."
                 ]
             ]
         ]);

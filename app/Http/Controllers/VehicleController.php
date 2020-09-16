@@ -24,6 +24,41 @@ class VehicleController extends Controller
     }
 
     /**
+     * @OA\Get (
+     ** path="/api/v1/vehicles",
+     *   tags={"Vehicles"},
+     *   summary="Vehicles",
+     *   operationId="vehicles",
+     *
+     *
+     *   @OA\Response(
+     *      response=200,
+     *       description="Success",
+     *      @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *   ),
+     *   @OA\Response(
+     *      response=401,
+     *      description="Unauthenticated"
+     *   ),
+     *   @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     *   @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     *     security={ {"bearerAuth": {}} },
+     *)
+     **/
+
+    /**
      * @return JsonResponse
      */
     public function index()
@@ -31,6 +66,80 @@ class VehicleController extends Controller
         $vehicles = $this->repository->listVehicle();
         return response()->json($vehicles, 200);
     }
+
+    /**
+     * @OA\Post(
+     *   path="/api/v1/vehicles",
+     *   tags={"Vehicles"},
+     *   summary="Vehicles",
+     *   operationId="vehicles",
+     *
+     *   @OA\Parameter(
+     *      name="license_plate",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     *   @OA\Parameter(
+     *      name="color",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     *   @OA\Parameter(
+     *      name="year",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *   @OA\Parameter(
+     *      name="model",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *   @OA\Parameter(
+     *       name="rental_value",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *   @OA\Response(
+     *      response=201,
+     *       description="Success",
+     *      @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *   ),
+     *   @OA\Response(
+     *      response=401,
+     *       description="Unauthenticated"
+     *   ),
+     *   @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     *   @OA\Response(
+     *      response=404,
+     *      description="Not found"
+     *   ),
+     *    @OA\Response(
+     *       response=403,
+     *       description="Forbidden"
+     *   ),
+     *      security={ {"bearerAuth": {}} },
+     *)
+     **/
 
     /**
      * @param Request $request
@@ -56,6 +165,48 @@ class VehicleController extends Controller
     }
 
     /**
+     * @OA\Get (
+     ** path="/api/v1/vehicles/{id}",
+     *   tags={"Vehicles"},
+     *   summary="Vehicle Detail",
+     *   operationId="vehicledetails",
+     *
+     *   @OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *
+     *   @OA\Response(
+     *      response=200,
+     *       description="Success",
+     *      @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *   ),
+     *   @OA\Response(
+     *      response=401,
+     *      description="Unauthenticated"
+     *   ),
+     *   @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     *   @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     *      security={ {"bearerAuth": {}} },
+     *)
+     **/
+    /**
      * @param $id
      * @return JsonResponse
      */
@@ -76,9 +227,9 @@ class VehicleController extends Controller
         $validator = Validator::make($request->all(), [
             'license_plate' => 'required|unique:vehicles|max:50'. $id,
             'color' => 'required|between:2,50',
-            'year' => 'required|number',
-            'model' => 'required|number',
-            'rental_value' => 'number'
+            'year' => 'required',
+            'model' => 'required',
+            'rental_value' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -88,6 +239,49 @@ class VehicleController extends Controller
         $this->repository->updateVehicle($request->all(), $id);
         return response()->json([ "message" => "Update successfully"], 200);
     }
+
+    /**
+     * @OA\Delete (
+     ** path="/api/v1/vehicles/{id}",
+     *   tags={"Vehicles"},
+     *   summary="Vehicle Delete",
+     *   operationId="vehicledelete",
+     *
+     *   @OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *
+     *   @OA\Response(
+     *      response=200,
+     *       description="Success",
+     *      @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *   ),
+     *   @OA\Response(
+     *      response=401,
+     *      description="Unauthenticated"
+     *   ),
+     *   @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     *   @OA\Response(
+     *      response=404,
+     *      description="not found"
+     *   ),
+     *      @OA\Response(
+     *          response=403,
+     *          description="Forbidden"
+     *      ),
+     *      security={ {"bearerAuth": {}} },
+     *)
+     **/
 
     /**
      * @param $id

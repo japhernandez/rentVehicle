@@ -12,12 +12,12 @@ export class VehiclesService {
   constructor(private http: HttpClient) {}
 
   getVehicles(): Observable<VehiclesInterface> {
-    return this.http.get<VehiclesInterface>(`${environment.baseUrl}/vehicle`);
+    return this.http.get<VehiclesInterface>(`${environment.baseUrl}/vehicles`);
   }
 
   getDetailVehicle(id: number): Observable<VehiclesInterface> {
     return this.http.get<VehiclesInterface>(
-      `${environment.baseUrl}/vehicle/${id}`
+      `${environment.baseUrl}/vehicles/${id}`
     );
   }
 
@@ -27,11 +27,11 @@ export class VehiclesService {
 
   deleteVehicle(id: number): Observable<VehiclesInterface> {
     return this.http.delete<VehiclesInterface>(
-      `${environment.baseUrl}/vehicle/${id}`
+      `${environment.baseUrl}/vehicles/${id}`
     );
   }
 
   postRental(rent: RentInterface): Observable<RentInterface> {
-    return this.http.post<RentInterface>(`${environment.baseUrl}/rent`, rent);
+    return this.http.post<RentInterface>(`${environment.baseUrl}/rents`, rent);
   }
 }

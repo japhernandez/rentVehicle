@@ -1,12 +1,13 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-12 mb-5" *ngIf="vehiclesArray || user['role'] === Admin">
+    <div class="col-md-12 mb-5" *ngIf="user['role'] === Admin">
       <button class="btn btn-dark" routerLink="create">Ingresar vehículo</button>
     </div>
     <div class="col-md-4 mb-5" *ngFor="let vehicle of vehiclesArray">
       <div class="card" style="width: 18rem; padding: 10px;">
-        <div class="d-flex flex-row-reverse" *ngIf="vehicle.status === 1 || user['role'] === Admin">
-          <span style="color: red; font-size: 20px; cursor: pointer;" (click)="deleteVehicle(vehicle.id)">
+        <div class="d-flex flex-row-reverse" *ngIf="user['role'] === Admin">
+          <span *ngIf="vehicle.status === 1" style="color: red; font-size: 20px; cursor: pointer;"
+            (click)="deleteVehicle(vehicle.id)">
             <i class="fa fa-trash-o" aria-hidden="true"></i></span>
         </div>
         <img src="../../../../assets/car.png" class="card-img-top" alt="...">

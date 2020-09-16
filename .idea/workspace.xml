@@ -20,19 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1a590e-85c5-43e7-a031-1ad9a359201b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rentVehicle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rentVehicle.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/RentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/RentRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/VehicleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/VehicleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_12_215252_create_vehicles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_12_215252_create_vehicles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/VehicleSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/VehicleSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pages/vehicles/list-vehicles/list-vehicles.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pages/vehicles/list-vehicles/list-vehicles.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pages/vehicles/vehicles.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pages/vehicles/vehicles.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/VehicleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/VehicleTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +166,11 @@
       <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
       <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
       <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/zircote/swagger-php" />
+      <path value="$PROJECT_DIR$/vendor/swagger-api/swagger-ui" />
+      <path value="$PROJECT_DIR$/vendor/darkaonline/l5-swagger" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hOkgkGJpIAvIkyREi3ujfePUa9" />
@@ -188,7 +195,7 @@
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="RunManager" selected="PHPUnit.RegisterUserTest.it_user_register">
+  <component name="RunManager" selected="PHPUnit.VehicleTest.it_update_a_vehicle_an_authenticated_user">
     <configuration name="RegisterUserTest.it_user_register" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\RegisterUserTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/RegisterUserTest.php" method="it_user_register" scope="Method" />
       <method v="2" />
@@ -201,8 +208,8 @@
       <TestRunner class="Tests\Feature\VehicleTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/VehicleTest.php" method="it_required_fields_for_updated_vehicle" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="VehicleTest.it_show_detail_vehicle" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\VehicleTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/VehicleTest.php" method="it_show_detail_vehicle" scope="Method" />
+    <configuration name="VehicleTest.it_update_a_vehicle_an_authenticated_user" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\VehicleTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/VehicleTest.php" method="it_update_a_vehicle_an_authenticated_user" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="VehicleTest.it_update_vehicle" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -215,11 +222,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.RegisterUserTest.it_user_register" />
+        <item itemvalue="PHPUnit.VehicleTest.it_update_a_vehicle_an_authenticated_user" />
         <item itemvalue="PHPUnit.VehicleTest.it_required_fields_for_updated_vehicle" />
+        <item itemvalue="PHPUnit.RegisterUserTest.it_user_register" />
         <item itemvalue="PHPUnit.VehicleTest.it_deleted_vehicle" />
         <item itemvalue="PHPUnit.VehicleTest.it_update_vehicle" />
-        <item itemvalue="PHPUnit.VehicleTest.it_show_detail_vehicle" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +252,7 @@
       <workItem from="1600099296012" duration="3763000" />
       <workItem from="1600180419896" duration="48000" />
       <workItem from="1600193638681" duration="1054000" />
-      <workItem from="1600212056655" duration="1085000" />
+      <workItem from="1600212056655" duration="12097000" />
     </task>
     <servers />
   </component>
@@ -273,10 +280,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="527" y="140" width="651" height="768" key="#PHP/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1599932184226" />
-    <state x="100" y="100" width="1480" height="850" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1600039871728">
+    <state x="100" y="100" width="1480" height="850" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1600228292323">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="100" y="100" width="1480" height="850" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600039871728" />
+    <state x="100" y="100" width="1480" height="850" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600228292323" />
     <state x="549" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599939714947">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -297,25 +304,25 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="100" y="100" width="1480" height="850" key="DiffContextDialog/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1599890019444" />
-    <state width="1638" height="290" key="GridCell.Tab.0.bottom" timestamp="1600180360938">
+    <state width="1638" height="290" key="GridCell.Tab.0.bottom" timestamp="1600228379838">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="290" key="GridCell.Tab.0.bottom/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600180360938" />
+    <state width="1638" height="290" key="GridCell.Tab.0.bottom/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600228379838" />
     <state width="1638" height="290" key="GridCell.Tab.0.bottom/-1366.23.1366.745/0.0.1680.1050@0.0.1680.1050" timestamp="1600024061240" />
-    <state width="1638" height="290" key="GridCell.Tab.0.center" timestamp="1600180360934">
+    <state width="1638" height="290" key="GridCell.Tab.0.center" timestamp="1600228379835">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="290" key="GridCell.Tab.0.center/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600180360934" />
+    <state width="1638" height="290" key="GridCell.Tab.0.center/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600228379835" />
     <state width="1638" height="290" key="GridCell.Tab.0.center/-1366.23.1366.745/0.0.1680.1050@0.0.1680.1050" timestamp="1600024061238" />
-    <state width="1638" height="290" key="GridCell.Tab.0.left" timestamp="1600180360932">
+    <state width="1638" height="290" key="GridCell.Tab.0.left" timestamp="1600228379834">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="290" key="GridCell.Tab.0.left/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600180360932" />
+    <state width="1638" height="290" key="GridCell.Tab.0.left/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600228379834" />
     <state width="1638" height="290" key="GridCell.Tab.0.left/-1366.23.1366.745/0.0.1680.1050@0.0.1680.1050" timestamp="1600024061237" />
-    <state width="1638" height="290" key="GridCell.Tab.0.right" timestamp="1600180360936">
+    <state width="1638" height="290" key="GridCell.Tab.0.right" timestamp="1600228379836">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="290" key="GridCell.Tab.0.right/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600180360936" />
+    <state width="1638" height="290" key="GridCell.Tab.0.right/-1366.0.1366.768/0.0.1680.1050@0.0.1680.1050" timestamp="1600228379836" />
     <state width="1638" height="290" key="GridCell.Tab.0.right/-1366.23.1366.745/0.0.1680.1050@0.0.1680.1050" timestamp="1600024061239" />
     <state x="572" y="242" key="NewPhpClassDialog" timestamp="1600057734955">
       <screen x="0" y="0" width="1680" height="1050" />

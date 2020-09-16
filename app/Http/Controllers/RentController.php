@@ -50,6 +50,80 @@ class RentController extends Controller
     }
 
     /**
+     * @OA\Post(
+     *   path="/api/v1/rents",
+     *   tags={"Rents"},
+     *   summary="Rents",
+     *   operationId="rents",
+     *
+     *  @OA\Parameter(
+     *      name="vehicle_id",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *  @OA\Parameter(
+     *      name="user_id",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="integer"
+     *      )
+     *   ),
+     *   @OA\Parameter(
+     *       name="delivery_date",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     *   @OA\Parameter(
+     *      name="departure_date",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     *     @OA\Parameter(
+     *       name="payment_method",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     *   @OA\Response(
+     *      response=201,
+     *       description="Success",
+     *      @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *   ),
+     *   @OA\Response(
+     *      response=401,
+     *       description="Unauthenticated"
+     *   ),
+     *   @OA\Response(
+     *      response=400,
+     *      description="Bad Request"
+     *   ),
+     *   @OA\Response(
+     *      response=404,
+     *      description="Not found"
+     *   ),
+     *    @OA\Response(
+     *       response=403,
+     *       description="Forbidden"
+     *   ),
+     *      security={ {"bearerAuth": {}} },
+     *)
+     **/
+
+    /**
      * @param Request $request
      * @return JsonResponse
      * @throws \Exception
@@ -95,7 +169,7 @@ class RentController extends Controller
         $initialDate = new DateTime($request->delivery_date);
         $endDate = new DateTime($request->departure_date);
         $date = $initialDate->diff($endDate);
-        return $date->days;
+        return $date->days + 1;
     }
 
     /**
