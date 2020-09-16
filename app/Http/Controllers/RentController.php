@@ -72,9 +72,11 @@ class RentController extends Controller
         //TODO Refactorizar las validaciones
         $vehicle = $this->vehicle->showVehicle($request->vehicle_id);
 
-        if ($vehicle->availability === 0) {
+        if ($vehicle->status === 0) {
             return response()->json(['message' => 'The vehicle you want to rent is not available'], 406);
         }
+
+        $this->vehicle->updateVehicle(['status' => 0], $request->vehicle_id);
 
         $price = $this->calculatePrice($request);
         $params = ['total_price' => $price] + $request->all();

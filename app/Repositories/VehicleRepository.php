@@ -67,7 +67,7 @@ class VehicleRepository implements VehicleInterface
      */
     public function deleteVehicle($id)
     {
-        return $this->model->delete($id);
+        return $this->model->destroy($id);
     }
 
     /**

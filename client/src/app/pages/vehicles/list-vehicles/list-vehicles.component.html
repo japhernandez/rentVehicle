@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12 mb-5" *ngIf="vehiclesArray || user['role'] === Admin">
+      <button class="btn btn-dark" routerLink="create">Ingresar vehículo</button>
+    </div>
+    <div class="col-md-4 mb-5" *ngFor="let vehicle of vehiclesArray">
+      <div class="card" style="width: 18rem; padding: 10px;">
+        <div class="d-flex flex-row-reverse" *ngIf="vehicle.status === 1 || user['role'] === Admin">
+          <span style="color: red; font-size: 20px; cursor: pointer;" (click)="deleteVehicle(vehicle.id)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i></span>
+        </div>
+        <img src="../../../../assets/car.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Placa: {{vehicle.license_plate}}</h5>
+          <p class="card-text">Color: {{vehicle.color}}</p>
+          <p class="card-text">Modelo: {{vehicle.model}}</p>
+          <p class="card-text">Año: {{vehicle.year }}</p>
+          <div class="row justify-content-between">
+            <div class="col-8">
+              <a routerLink="detail/{{vehicle.id}}" *ngIf="vehicle.status === 1" class="btn btn-primary"><i
+                  class="fa fa-usd mr-2" aria-hidden="true"></i>{{vehicle.rental_value}}</a>
+            </div>
+            <div class="col-4">
+              <span class="badge badge-success" *ngIf="vehicle.status === 1">Disponible</span>
+              <span class="badge badge-danger" *ngIf="vehicle.status === 0">Rentado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

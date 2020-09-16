@@ -35,15 +35,6 @@ class RentRepository implements RentInterface
     }
 
     /**
-     * @param $id
-     * @return Rent
-     */
-    public function showRent($id): Rent
-    {
-        return $this->model->find($id);
-    }
-
-    /**
      * @return Rent
      */
     public function getModel()

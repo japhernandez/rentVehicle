@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\UseCase\UserInterface;
 use Illuminate\Http\JsonResponse;
@@ -70,19 +71,22 @@ class AuthController extends Controller
         if (!$token = JWTAuth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
+        $user = auth()->user();
 
-       return $this->createNewToken($token);
+       return $this->createNewToken($token, $user);
     }
 
     /**
      * Get the token array structure.
      *
      * @param string $token
+     * @param $user
      * @return JsonResponse
      */
-    protected function createNewToken($token)
+    protected function createNewToken($token, $user)
     {
         return response()->json([
+            'user' => $user,
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => JWTAuth::factory()->getTTL() * 60
@@ -96,8 +100,16 @@ class AuthController extends Controller
      */
     public function logout()
     {
-        JWTAuth::logout();
-
+        auth()->logout();
         return response()->json(['message' => 'Successfully logged out']);
+    }
+
+    /**
+     * @return JsonResponse
+     */
+    public function users()
+    {
+        $users = User::all();
+        return response()->json($users);
     }
 }

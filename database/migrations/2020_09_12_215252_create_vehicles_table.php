@@ -17,10 +17,10 @@ class CreateVehiclesTable extends Migration
             $table->id();
             $table->string('license_plate')->unique();
             $table->string('color');
-            $table->date('year');
+            $table->string('year');
             $table->string('model');
             $table->bigInteger('rental_value');
-            $table->integer('availability');
+            $table->integer('availability')->default(1);
             $table->integer('status')->default(1);
             $table->timestamps();
         });

@@ -38,13 +38,13 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
+        //TODO Refactorizar las validaciones
         $validator = Validator::make($request->all(), [
             'license_plate' => 'required|unique:vehicles|max:50',
             'color' => 'required|between:2,50',
-            'year' => 'required|date',
-            'model' => 'required|string',
+            'year' => 'required',
+            'model' => 'required',
             'rental_value' => 'required',
-            'availability' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -72,13 +72,13 @@ class VehicleController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //TODO Refactorizar las validaciones
         $validator = Validator::make($request->all(), [
             'license_plate' => 'required|unique:vehicles|max:50'. $id,
             'color' => 'required|between:2,50',
-            'year' => 'required|date',
-            'model' => 'required|string',
-            'rental_value' => 'required',
-            'availability' => 'required'
+            'year' => 'required|number',
+            'model' => 'required|number',
+            'rental_value' => 'number'
         ]);
 
         if ($validator->fails()) {

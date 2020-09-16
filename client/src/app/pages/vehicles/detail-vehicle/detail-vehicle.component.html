@@ -1,0 +1,143 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">Alquiler de vehículos</div>
+        <form [formGroup]="rentForm" (submit)="onSubmit()">
+          <div class="card-body" *ngIf="vehicle">
+            <div class="row">
+              <div class="col-12">
+                <h3 class="text-center mb-3">Usuario</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Nombre</label>
+                  <input value="{{ user['name'] }}" type="text" class="form-control" id="" readonly />
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Email</label>
+                  <input value="{{ user['email'] }}" type="email" class="form-control" id="" readonly />
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Documento</label>
+                  <input value="{{ user['document'] }}" type="text" class="form-control" id="" readonly />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <h3 class="text-center my-3">Descripción del vehículo</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Placa</label>
+                  <input value="{{ vehicle.license_plate }}" type="text" class="form-control" id="" readonly />
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Color</label>
+                  <input value="{{ vehicle.color }}" type="email" class="form-control" id="" readonly />
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Modelo</label>
+                  <input value="{{ vehicle.model }}" type="text" class="form-control" id="" readonly />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Año</label>
+                  <input value="{{ vehicle.year }}" type="text" class="form-control" id="" readonly />
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Valor diario</label>
+                  <input value="{{ vehicle.rental_value | currency }}" type="email" class="form-control" id=""
+                    readonly />
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for=""></label>
+                  <div><span class="badge badge-success">Disponible</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <h3 class="text-center mb-3">Descripción del contrato</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Fecha de salida</label>
+                  <input type="date" class="form-control is-invalid" formControlName="delivery_date" id="delivery_date"
+                    (change)="calculateRent($event.target)" [ngClass]="{
+                      'is-invalid': submitted && f.delivery_date.errors
+                    }" />
+                  <div *ngIf="submitted && f.delivery_date.errors" class="invalid-feedback">
+                    <div *ngIf="f.delivery_date.errors.required">
+                      La fecha de salida es requerida
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="">Fecha de ingreso</label>
+                  <input type="date" class="form-control is-invalid" id="departure_date"
+                    (change)="calculateRent($event.target)" formControlName="departure_date" [ngClass]="{
+                      'is-invalid': submitted && f.departure_date.errors
+                    }" />
+                  <div *ngIf="submitted && f.departure_date.errors" class="invalid-feedback">
+                    <div *ngIf="f.departure_date.errors.required">
+                      La fecha de entrega es requerido
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Medio de pago</label>
+                  <select class="form-control is-invalid" formControlName="payment_method" [ngClass]="{
+                      'is-invalid': submitted && f.payment_method.errors
+                    }">
+                    <option>Efectivo</option>
+                    <option>Tarjeta de crédito</option>
+                  </select>
+                  <div *ngIf="submitted && f.payment_method.errors" class="invalid-feedback">
+                    <div *ngIf="f.payment_method.errors.required">
+                      El método de pago es requerido
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 offset-md-8">
+                <span>Total: {{ calculate | currency }}</span>
+              </div>
+            </div>
+            <div class="modal-footer mt-5">
+              <a routerLink="/" class="btn btn-secondary">Regresar</a>
+              <button class="btn btn-primary" type="submit">Alquilar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

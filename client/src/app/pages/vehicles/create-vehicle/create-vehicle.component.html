@@ -1,0 +1,103 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">Registro de vehículo</div>
+                <form [formGroup]="vehicleForm" (submit)="onSubmit()">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="">Placa</label>
+                                    <input type="text" class="form-control is-invalid" formControlName="license_plate"
+                                        id="license_plate" [ngClass]="{
+                        'is-invalid': submitted && f.license_plate.errors
+                      }" />
+                                    <div *ngIf="submitted && f.license_plate.errors" class="invalid-feedback">
+                                        <div *ngIf="f.license_plate.errors.required">
+                                            La placa es requerida
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="">Color</label>
+                                    <input type="text" class="form-control is-invalid" id="color"
+                                        formControlName="color" [ngClass]="{
+                        'is-invalid': submitted && f.color.errors
+                      }" />
+                                    <div *ngIf="submitted && f.color.errors" class="invalid-feedback">
+                                        <div *ngIf="f.color.errors.required">
+                                            El color es requerido
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Año</label>
+                                    <input class="form-control is-invalid" formControlName="year" [ngClass]="{
+                        'is-invalid': submitted && f.year.errors
+                      }" />
+                                    <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+                                        <div *ngIf="f.year.errors.required">
+                                            El año es requerido
+                                        </div>
+                                    </div>
+                                    <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+                                        <div *ngIf="f.year.errors.pattern">
+                                            El campo solo recibe numeros
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Modelo</label>
+                                    <input class="form-control is-invalid" formControlName="model" [ngClass]="{
+                        'is-invalid': submitted && f.model.errors
+                      }" />
+                                    <div *ngIf="submitted && f.model.errors" class="invalid-feedback">
+                                        <div *ngIf="f.model.errors.required">
+                                            El modelo es requerido
+                                        </div>
+                                    </div>
+                                    <div *ngIf="submitted && f.model.errors" class="invalid-feedback">
+                                        <div *ngIf="f.model.errors.pattern">
+                                            El campo solo recibe numeros
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Valor alquiler</label>
+                                    <input class="form-control is-invalid" formControlName="rental_value" [ngClass]="{
+                        'is-invalid': submitted && f.rental_value.errors
+                      }" />
+                                    <div *ngIf="submitted && f.rental_value.errors" class="invalid-feedback">
+                                        <div *ngIf="f.rental_value.errors.required">
+                                            El valor del alquiler es requerido
+                                        </div>
+                                    </div>
+                                    <div *ngIf="submitted && f.rental_value.errors" class="invalid-feedback">
+                                        <div *ngIf="f.rental_value.errors.pattern">
+                                            El campo solo recibe numeros
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer mt-5">
+                            <a routerLink="/" class="btn btn-secondary">Regresar</a>
+                            <button class="btn btn-primary" type="submit">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
