@@ -7,43 +7,43 @@ en el proyecto raiz, en la carpeta *client*.
 
 En el archivo *.env* que esta en la raiz, modificar las credenciales para la conexión
 
-#####DB_CONNECTION=mysql
-#####DB_HOST=127.0.0.1
-#####DB_PORT=3306
-#####DB_DATABASE=nombre de la base de datos
-#####DB_USERNAME=su usuario
-#####DB_PASSWORD=su password
+##### DB_CONNECTION=mysql
+##### DB_HOST=127.0.0.1
+##### DB_PORT=3306
+##### DB_DATABASE=nombre de la base de datos
+##### DB_USERNAME=su usuario
+##### DB_PASSWORD=su password
 
-####Correr migraciones y seeders
+#### Correr migraciones y seeders
 *php artisan migrate:fresh --seed*
 
-####Correr la aplicación del servidor
+#### Correr la aplicación del servidor
 
 *php artisan serve*
 
-####Correr los test
+#### Correr los test
 
 *vendor/bin/phpunit*
 
-####Documentación de las rutas
+#### Documentación de las rutas
 
 http://localhost:8000/api/documentation
 
 Se debe generar un token, para poder ver todos los recursos, la ruta que hace esto es la http://localhost:8000/api/v1/login
 
-######Credenciales para obtener el token
-######email: *john@gmail.com*
-######password: *123456*
+###### Credenciales para obtener el token
+###### email: *john@gmail.com*
+###### password: *123456*
 
 ##Aplicación del lado del Cliente
 
-######*cd client*
-######*ng serve*
+###### *cd client*
+###### *ng serve*
 
-######Credenciales como administrador
-######*email: john@gmail.com*
-######*password: 123456*
+###### Credenciales como administrador
+###### *email: john@gmail.com*
+###### *password: 123456*
 
-######Credenciales como usuario
-######*email: simon@gmail.com*
-######*password: 123456*
+###### Credenciales como usuario
+###### *email: simon@gmail.com*
+###### *password: 123456*
