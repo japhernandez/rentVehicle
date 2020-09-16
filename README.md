@@ -14,6 +14,9 @@ En el archivo *.env* que esta en la raiz, modificar las credenciales para la con
 #####DB_USERNAME=su usuario
 #####DB_PASSWORD=su password
 
+####Correr migraciones y seeders
+*php artisan migrate:fresh --seed*
+
 ####Correr la aplicación del servidor
 
 *php artisan serve*
